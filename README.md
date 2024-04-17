@@ -15,6 +15,11 @@ In this website, User have to give his/her annual gross income, extra income, de
         - Example
             - Age = 34, Income = 40 Lakhs, no deductions, tax = .3 * (40 - 8) = .3 * 32 = 9.6 Lakhs
 
+#project-outlook
+
+https://github.com/Kunal-Deep011/Tax-Calculation-Website/assets/117732649/9342bf2d-0f22-4135-ad54-d561acb9ee67
+
+
 #Screenshots
 
 ![Screenshot (649)](https://github.com/Kunal-Deep011/Tax-Calculation-Website/assets/117732649/5b27354a-1959-4fba-9543-5790b00caa08)
