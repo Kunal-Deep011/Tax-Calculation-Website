@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #6359EC;
+  color: #fff;
+  width: 100%;
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+nav{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.bx-calculator{
+  font-size: 1.5rem;
+}
+/*Form-Stylig*/
+
+#taxForm{
+  min-width: 500px;
+  min-height: 450px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  box-shadow: 0 0 10px #C6CDD5;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+#taxForm label{
+  color: #2C3843;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap:5px;
+}
+#taxForm input{
+  width: 100%;
+  line-height: 35px;
+  border-radius: 6px;
+  border: 2px solid #C6CDD5;
+  padding-left: 5px;
+  outline: none;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #2C3843;
+}
+#taxForm input::placeholder{
+  padding-left: 5px;
+  color: #C6CDD5;
+}
+#taxForm select{
+padding-top: 9.5px;
+padding-bottom: 9.5px;
+border: 2px solid #C6CDD5;
+border-radius: 6px;
+color: #2C3843;
+outline: none;
+}
+#taxForm option{
+  font-size: 0.9rem;
+  color: #2C3843;
+}
+#calculateButton{
+  color: #fff;
+  background-color: #6359EC;
+  border: none;
+  line-height: 35px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#calculateButton:hover{
+  color:#2C3843;
+  background-color: aqua;
+}
+.bx-error-circle{
+  color: red;
+  opacity: 0.5;
+  font-size: 1.5rem;
+}
+.bx-question-mark{
+  color: #C6CDD5;
+  font-size: 1rem;
+  border: 2px solid #C6CDD5;
+  border-radius: 50%;
+}
+.inputBox{
+  position: relative;
+  display: flex;
+  justify-content:end;
+  align-items: center;
+}
+#errorBox{
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}
+#tooltip, #tooltip01 {
+  position: relative;
+  cursor: pointer;
+}
+.incomeError, .deductionError, .extraIncomeError{
+  display: none;
+}
+.bx-error-circle:hover{
+  color: red;
+  opacity: 1;
+}
+.queryIcon01:hover ~ #tooltipText{
+  display: inline;
+  transition: linear 1s;
+}
+.queryIcon02:hover ~ #tooltipText{
+  display: inline;
+  transition: linear 1s;
+}
+.queryIcon03:hover ~ #tooltipText{
+  display: inline;
+  transition: linear 1s;
+}
+#tooltipText{
+  position: absolute;
+  border: none;
+  left: 62px;
+  top: -45px;
+  transform: translateX(-50%);
+  background-color: #4F5C6A;
+  color: #fff;
+  white-space: nowrap;
+  border-radius: 6px;
+  line-height: 35px;
+  padding: 0 4px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  display: none;
+}
+#tooltipText::before{
+  content: "";
+  position: absolute;
+  left: 12px;
+  top:70%;
+  transform: rotate(45deg);
+  border: 7.5px solid;
+  border-color: #4F5C6A;
+}
+
+#tooltipText01{
+  min-width: 150px;
+  position: absolute;
+  border: none;
+  left: 65px;
+  top: -65px;
+  transform: translateX(-50%);
+  background-color: #4F5C6A;
+  color: #fff;
+  border-radius: 6px;
+  padding: 5px 5px 10px 5px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 1;
+  display: none;
+}
+#tooltipText01::before{
+  content: "";
+  position: absolute;
+  left: 12px;
+  top:83%;
+  transform: rotate(45deg);
+  border: 7.5px solid;
+  border-color: #4F5C6A;
+}
+.bx-question-mark:hover{
+  color: #4F5C6A;
+  border-color: #4F5C6A;
+}
+.queryIcon:hover ~ #tooltipText01{
+  display: inline;
+  transition: linear 1s;
+}
+
+/*Modal-Styling*/
+
+.modal{
+  min-width: 600px;
+  min-height: 400px;
+  box-shadow:  0 0 10px #C6CDD5;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.modal h1{
+  color:#2C3843;
+  opacity: 0.8;
+  font-weight: 500;
+}
+.modal-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content h3{
+  margin-top: 12px;
+  color:#2C3843;
+  opacity: 0.8;
+}
+.modal-content p{
+  margin-top:4px;
+  color:#2C3843;
+  opacity: 0.8;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 5;
+}
+.modal-content button{
+  margin-top: 35px;
+  width: 65px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #6359EC;
+  color:#fff;
+  cursor: pointer;
+}
+.modal-content button:hover{
+  transform: scale(1.2);
+}

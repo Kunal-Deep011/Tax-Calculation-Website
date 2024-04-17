@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tax-Calculation-website</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="./Fevicon/Fevicon.webp" type="image/x-icon">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+  <!--Form-Section-->
+  <header>
+    <nav><span><i class='bx bx-calculator' ></i></span><h1>TaX-KalKulatoR</h1></nav>
+  </header>
+  <form id="taxForm">
+       
+       <label for="annualIncome">Enter gross annual income 
+        <span>
+             <div id="tooltip01">
+               <span class="queryIcon"><i class='bx bx-question-mark'></i></span>
+               <span id="tooltipText01">Gross annual income is your total salary in a year before any deductions.</span>
+             </div>
+        </span>
+       </label>
+       <div class="inputBox">
+            <input id="annualIncome" type="text" placeholder="Enter gross annual income" required>
+            <span id="errorBox">
+              <div id="tooltip" class="incomeError">
+                <span class="queryIcon01"><i class='bx bx-error-circle'></i></span>
+                <span id="tooltipText">please enter numbers only</span>
+              </div>
+            </span>
+       </div>
+       
+       <label for="extraIncome">Enter extra income 
+        <span>
+          <div id="tooltip01">
+            <span class="queryIcon"><i class='bx bx-question-mark'></i></span>
+            <span id="tooltipText01">It is your other source of income apart from your annual gross salary.</span>
+          </div>
+        </span>
+       </label>
+       <div class="inputBox">     
+            <input id="extraIncome" type="text" placeholder="Enter extra income from other sources" required>
+            <span id="errorBox">
+              <div id="tooltip" class="extraIncomeError">
+                <span class="queryIcon02"><i class='bx bx-error-circle'></i></span>
+                <span id="tooltipText">please enter numbers only</span>
+              </div>
+            </span>
+       </div>
+       
+       <label for="age">Enter age group
+        <span>
+           <div id="tooltip01">
+              <span class="queryIcon"><i class='bx bx-question-mark'></i></span>
+              <span id="tooltipText01">Age(< 40) - 0.3 tax rate <br/> Age(>=40 <60) - 0.4 tax rate <br/> Age(>= 60) - 0.1 tax rate</span>
+           </div>
+       </span>
+      </label>
+       <select id="age" name="age" required>
+        <option id="one" value="">Select Age Group</option>
+          <option id="two" value="<40">&lt;40</option>
+          <option id="three" value=">=40&<60">&ge;40 &lt;60</option>
+          <option id="four" value=">=60">&ge;60</option>
+       </select>
+       
+       
+       <label for="deductionMoney">Enter total applicable deductions 
+        <span>
+          <div id="tooltip01">
+            <span class="queryIcon"><i class='bx bx-question-mark'></i></span>
+            <span id="tooltipText01">Total applicable deductions is your deduction amount in your overall income.</span>
+          </div>
+        </span>
+       </label>
+       <div class="inputBox">
+            <input id="deductionMoney" type="text" placeholder="Add total applicable deductions" required>
+            <span id="errorBox">
+              <div id="tooltip" class="deductionError">
+                <span class="queryIcon03"><i class='bx bx-error-circle'></i></span>
+                <span id="tooltipText"> please enter numbers only</span>
+              </div>
+            </span>
+       </div>
+       
+       <button id="calculateButton" type="submit">Submit</button>
+       
+  </form>
+
+  <!--Modal-Section-->
+
+    <div id="modal" class="modal">
+       <div class="modal-content">
+          <h1>Your overall income will be</h1>
+          <h3 id="resultField"></h3>
+          <p>after tax deductions</p>
+          <button id="closeButton" type="button">Close</button>
+       </div>
+    </div>
+
+  <script src="./script.js"></script>
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+</html>
